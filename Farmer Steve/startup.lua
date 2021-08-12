@@ -1,3 +1,8 @@
+shell.run("clear")
+textutils.slowPrint("CraftOS 1.7")
+os.sleep(1.5)
+shell.run("clear")
+os.sleep(0.5)
 print("+------------------------------+")
 print("|         Farmer Steve         |")
 print("|  Designed for: 2 8x16 Farms. |")
