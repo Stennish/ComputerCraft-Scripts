@@ -1,18 +1,37 @@
+textutils.slowPrint("How many plots?")
+os.sleep(1)
+print([1]-Single Plot)
+os.sleep(0.25)
+print([2]-Double Plot)
+os.sleep(0.25)
+io.write("Choose: ")
+
 local function printUsage()
     print( "Usage:" )
     print( "Replant <number of plots (maximum 2)")
 end
+
+local boolean1 = false
+local boolean2 = false
 local choice = io.read()
-local boolean1 = true
-local boolean0 = false
+
 if choice == "1" then
+    boolean1 = true
+    boolean2 = false
+elseif choice == "2" then
+    boolean1 = false
+    boolean2 = true
+end
+
+if boolean1 == true then
     init()
     Plot1()
-elseif choice == "2" then
+elseif boolean2 == true then
     init()
     Plot1()
     Plot2()
-end
+end 
+
 -- note to self: get ^this^ goddamn garbage to work.
 
 -- main code
