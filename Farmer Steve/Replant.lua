@@ -1,22 +1,19 @@
 -- WIP Functions are commented out!
-
--- local function printUsage()
---     print( "Usage:" )
---     print( "Replant <number of plots (maximum 2)")
--- end
--- 
--- local variable = { ... }
--- if #variable < 1 then
---     printUsage()
---     return
--- elseif #variable == 1 then
---     init()
---     Plot1()
--- elseif #variable == 2 then
---     init()
---     Plot1()
---     Plot2()
--- end
+local function printUsage()
+    print( "Usage:" )
+    print( "Replant <number of plots (maximum 2)")
+end
+local choice = io.read()
+local boolean1 = true
+local boolean0 = false
+if choice == "1" then
+    init()
+    Plot1()
+elseif choice == "2" then
+    init()
+    Plot1()
+    Plot2()
+end
 -- note to self: get ^this^ goddamn garbage to work.
 
 -- main code
