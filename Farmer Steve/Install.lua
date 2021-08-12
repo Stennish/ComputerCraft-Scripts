@@ -1,15 +1,15 @@
-print("Installing Farmer Steve.iso")
-print("Copyright: Stennish - 2021")
+os.slowPrint("Installing Farmer Steve.iso")
+os.slowPrint("Copyright: Stennish - 2021")
 print("")
-print("Designed for: 2 8x16 Farms.")
-print("Image: imgur.com/ctxxMas.png")
+os.slowPrint("Designed for: 2 8x16 Farms.")
+os.slowPrint("Image: imgur.com/ctxxMas.png")
 os.sleep(2.5)
-pastebin get GvpLhcDh Replant
-pastebin get xvcrmfTs startup
+pastebin get 7jJ8BfR7 Replant
+pastebin get fChmY7q7 startup
 os.sleep(1)
-print("Farmer Steve Successfully Installed!")
-print("Enjoy your farming!")
+os.slowPrint("Farmer Steve Successfully Installed!")
+os.slowPrint("Enjoy your farming!")
 os.sleep(1.5)
-print("Restarting in 5 seconds...")
+os.slowPrint("Restarting in 5 seconds...")
 os.sleep(5)
 os.reboot()
