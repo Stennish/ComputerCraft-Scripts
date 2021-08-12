@@ -1,5 +1,5 @@
-for i=1,16 do
-    turtle.placeDown()
+for i=1,23 do
     turtle.forward()
     turtle.placeDown()
+    turtle.forward()
 end

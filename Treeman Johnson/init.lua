@@ -1,0 +1,5 @@
+print("Initializing...")
+os.sleep(1)
+print("Preparing Inventory...")
+shell.run("Refill")
+print("Started!")
