@@ -1,3 +1,6 @@
+-- You can find the up to date (sometimes broken) code on my github page
+-- including my other little projects at github.com/Stennish/ComputerCraft-Scripts/
+
 shell.run("clear")
 textutils.slowPrint("CraftOS 1.7")
 os.sleep(1.5)

@@ -1,77 +1,84 @@
-textutils.slowPrint("How many plots?")
-os.sleep(1)
-print([1]-Single Plot)
-os.sleep(0.25)
-print([2]-Double Plot)
-os.sleep(0.25)
-io.write("Choose: ")
+-- You can find the up to date (sometimes broken) code on my github page
+-- including my other little projects at github.com/Stennish/ComputerCraft-Scripts/
+ 
+-- I'm telling you this now, because every time I add something, something's broken, and I finally fix it -
+-- -I'll update this pastebin with the new code, including the broken code.-
+-- -So if it's broken, just wait a little while I test it ingame and decide if I should keep going or go back to working code.
 
-local function printUsage()
-    print( "Usage:" )
-    print( "Replant <number of plots (maximum 2)")
-end
+-- I know this is some long commented out text, but I just want to be clear. lmao. -Stennish
 
-local boolean1 = false
-local boolean2 = false
-local choice = io.read()
-
-if choice == "1" then
-    boolean1 = true
-    boolean2 = false
-elseif choice == "2" then
-    boolean1 = false
-    boolean2 = true
-end
-
-if boolean1 == true then
-    init()
-    Plot1()
-elseif boolean2 == true then
-    init()
-    Plot1()
-    Plot2()
-end 
+-- textutils.slowPrint("How many plots?")
+-- os.sleep(1)
+-- print("[1]-Single Plot")
+-- os.sleep(0.25)
+-- print("[2]-Double Plot")
+-- os.sleep(0.25)
+-- io.write("Choose: ")
+-- 
+-- local boolean1 = false
+-- local boolean2 = false
+-- local choice = io.read()
+-- 
+-- if choice == "1" then
+--     boolean1 = true
+--     boolean2 = false
+-- elseif choice == "2" then
+--     boolean1 = false
+--     boolean2 = true
+-- end
+-- 
+-- if boolean1 == true then
+--     init()
+--     plot1()
+-- elseif boolean2 == true then
+--     init()
+--     plot2()
+-- end 
 
 -- note to self: get ^this^ goddamn garbage to work.
 
 -- main code
---init()
---print("Started!")
---for i=1,4 do -- Fill first plot
---    PlaceSeed()
---    NextLeft()
---    PlaceSeed()
---    NextRight()
---    print("Refilling Slot 1...")
---    Refill()
---    print("Continuing...")
---end
---print("First plot done, moving on to next...")
---NextPlot()
---for i=1,4 do -- Fill second plot
---    PlaceSeed()
---    NextLeft()
---    PlaceSeed()
---    NextRight()
---    print("Refilling Slot 1...")
---    Refill()
---    print("Continuing...")
---end
---print("Finished, returning to start point.")
---Return()
---print("Done!")
-
--- Functions below
+init()
+print("Started!")
+for i=1,4 do -- Fill first plot
+    PlaceSeed()
+    NextLeft()
+    PlaceSeed()
+    NextRight()
+    print("Refilling Slot 1...")
+    refill1()
+    print("Continuing...")
+end
+print("First plot done, moving on to next...")
+NextPlot()
+for i=1,4 do -- Fill second plot
+    PlaceSeed()
+    NextLeft()
+    PlaceSeed()
+    NextRight()
+    print("Refilling Slot 1...")
+    refill1()
+    print("Continuing...")
+end
+print("Finished, returning to start point.")
+Return()
+print("Done!")
 
 
-
-
-
-
-
-
-
-
+local function init() -- Prepare for Replanting.
+    print("Initializing...")
+    os.sleep(0.5)
+    print("Getting in position...")
+    os.sleep(0.5)
+    turtle.up()
+    os.sleep(1)
+    turtle.forward()
+    os.sleep(1.5)
+    print("In position.")
+    os.sleep(1)
+    print("Preparing Inventory...")
+    refill1()
+end
 
 local function NextPlot() -- Move onto the Next Plot
     turtle.turnLeft()
@@ -128,22 +135,31 @@ local function Return2() -- Go back to starting position. [2 Plots]
     turtle.back()
     turtle.down()
 end
-local function Plot1()
+local function plot1()
     for i=1,4 do -- Fill first plot
         PlaceSeed()
         NextLeft()
         PlaceSeed()
         NextRight()
         print("Refilling Slot 1...")
-        Refill()
+        refill1()
         print("Continuing...")
     end
     print("Finished, returning to start point.")
     Return1()
     print("Done!")
-    print("Done!")end
+end
 
-local function Plot2()
+local function plot2()
+    for i=1,4 do -- Fill first plot
+        PlaceSeed()
+        NextLeft()
+        PlaceSeed()
+        NextRight()
+        print("Refilling Slot 1...")
+        refill1()
+        print("Continuing...")
+    end
     print("First plot done, moving on to next...")
     NextPlot()
     for i=1,4 do -- Fill second plot
@@ -152,7 +168,7 @@ local function Plot2()
         PlaceSeed()
         NextRight()
         print("Refilling Slot 1...")
-        Refill()
+        refill1()
         print("Continuing...")
     end
     print("Finished, returning to start point.")
@@ -160,22 +176,7 @@ local function Plot2()
     print("Done!")
 end
 
-local function init() -- Prepare for Replanting.
-    print("Initializing...")
-    os.sleep(0.5)
-    print("Getting in position...")
-    os.sleep(0.5)
-    turtle.up()
-    os.sleep(1)
-    turtle.forward()
-    os.sleep(1.5)
-    print("In position.")
-    os.sleep(1)
-    print("Preparing Inventory...")
-    Refill()
-end
-
-local function Refill() -- Go through all slots, refilling Slot 1.
+local function refill1() -- Go through all slots, refilling Slot 1.
     turtle.select(16)
     turtle.transferTo(1)
     turtle.select(15)

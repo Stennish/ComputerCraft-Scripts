@@ -1,3 +1,6 @@
+-- You can find the up to date (sometimes broken) code on my github page
+-- including my other little projects at github.com/Stennish/ComputerCraft-Scripts/
+
 local function clear()
     shell.run("clear")
 end
